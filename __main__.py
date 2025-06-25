@@ -48,7 +48,8 @@ def shapeFactory(choice):
     else:
         print("Invalid shape choice")
         return None
-
+def validIdx(idx1,idx2,shapes):
+    return 0 <= idx1 < len(shapes) and 0 <= idx2 < len(shapes)
 def main():
     shapes = []
     while True:
@@ -79,6 +80,9 @@ def main():
             else:
                 a = int(input("Enter index of first shape: "))
                 b = int(input("Enter index of second shape: "))
+                if(not validIdx(a,b,shapes)):
+                    print("Invalid index.")
+                    continue
                 if shapes[a] == shapes[b]:
                     print("Shapes are equal in area and perimeter.")
                 elif shapes[a] > shapes[b]:
@@ -92,6 +96,9 @@ def main():
             else:
                 a = int(input("Enter index of first shape: "))
                 b = int(input("Enter index of second shape: "))
+                if (not validIdx(a, b, shapes)):
+                    print("Invalid index.")
+                    continue
                 total_area = shapes[a] + shapes[b]
                 print(f"Total area: {total_area:.2f}")
         elif option == "5":
@@ -100,6 +107,9 @@ def main():
             else:
                 a = int(input("Enter index of first shape: "))
                 b = int(input("Enter index of second shape: "))
+                if (not validIdx(a, b, shapes)):
+                    print("Invalid index.")
+                    continue
                 total_area = shapes[a] - shapes[b]
                 print(f"Total area: {total_area:.2f}")
 
