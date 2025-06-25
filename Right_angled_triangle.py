@@ -7,7 +7,7 @@ class Right_angled_triangle(Rectangle):
         return super().get_area()/2
 
     def get_perimeter(self):
-        return super().get_perimeter()/2
+        return super().width + super().height + ((super().height**2 + super().width**2)**0.5)
 
     def __str__(self):
         return f"Right_angled_triangle: height = {self.height}, width = {self.width}, area = {self.get_area()}, perimeter = {self.get_perimeter()}"
