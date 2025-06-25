@@ -3,14 +3,15 @@ from Hexagon import Hexagon
 from Rectangle import Rectangle
 from Square import Square
 from Triangle import Triangle
-
+from Right_angled_triangle import Right_angled_triangle
 def menu():
     print("\nWelcome to the Shape Factory")
     print("1. Add new shape")
     print("2. Show all shapes")
     print("3. Compare two shapes")
     print("4. Sum areas of two shapes")
-    print("5. Exit")
+    print("5. subtract areas of two shapes")
+    print("6. Exit")
 
 def shapeMenu():
     print("Which shape would you like to create?")
@@ -19,6 +20,7 @@ def shapeMenu():
     print("3. Rectangle")
     print("4. Triangle")
     print("5. Hexagon")
+    print("6. right-angled triangle")
 
 def shapeFactory(choice):
     if choice == 1:
@@ -39,6 +41,10 @@ def shapeFactory(choice):
     elif choice == 5:
         side = float(input("Enter side: "))
         return Hexagon(side)
+    elif choice == 6:
+        height = float(input("Enter height: "))
+        base = float(input("Enter base: "))
+        return Right_angled_triangle(height, base)
     else:
         print("Invalid shape choice")
         return None
@@ -88,8 +94,16 @@ def main():
                 b = int(input("Enter index of second shape: "))
                 total_area = shapes[a] + shapes[b]
                 print(f"Total area: {total_area:.2f}")
-
         elif option == "5":
+            if len(shapes) < 2:
+                print("You need at least two shapes to subtract.")
+            else:
+                a = int(input("Enter index of first shape: "))
+                b = int(input("Enter index of second shape: "))
+                total_area = shapes[a] - shapes[b]
+                print(f"Total area: {total_area:.2f}")
+
+        elif option == "6":
             print("Goodbye!")
             break
 

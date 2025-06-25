@@ -15,3 +15,5 @@ class Shape:
         return self.get_area() < other.get_area()
     def __add__(self, other):
         return self.get_area() + other.get_area()
+    def __sub__(self, other):
+        return self.get_area() - other.get_area()
