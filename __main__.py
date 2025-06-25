@@ -4,6 +4,8 @@ from Rectangle import Rectangle
 from Square import Square
 from Triangle import Triangle
 from Right_angled_triangle import Right_angled_triangle
+
+#
 def menu():
     print("\nWelcome to the Shape Factory")
     print("1. Add new shape")
@@ -13,6 +15,7 @@ def menu():
     print("5. subtract areas of two shapes")
     print("6. Exit")
 
+#shape menu
 def shapeMenu():
     print("Which shape would you like to create?")
     print("1. Circle")
@@ -22,6 +25,7 @@ def shapeMenu():
     print("5. Hexagon")
     print("6. right-angled triangle")
 
+#return the shape
 def shapeFactory(choice):
     if choice == 1:
         radius = float(input("Enter radius: "))
@@ -50,6 +54,8 @@ def shapeFactory(choice):
         return None
 def validIdx(idx1,idx2,shapes):
     return 0 <= idx1 < len(shapes) and 0 <= idx2 < len(shapes)
+
+
 def main():
     shapes = []
     while True:
